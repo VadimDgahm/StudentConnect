@@ -1,0 +1,8 @@
+.nav_link a {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.nav_link a.active {
+    color: gold;
+}

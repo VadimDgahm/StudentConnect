@@ -1,0 +1,9 @@
+.textareaPost{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.posts{
+    margin-bottom: 10px;
+}
