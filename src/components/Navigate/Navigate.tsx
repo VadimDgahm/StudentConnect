@@ -11,6 +11,7 @@ export const Navigate = () => {
       <Link name={"News"} href={"/news"} />
       <Link name={"Music"} href={"/music"} />
       <Link name={"Settings"} href={"/settings"} />
+      <Link name={"Users"} href={"/users"} />
     </nav>
   );
 };

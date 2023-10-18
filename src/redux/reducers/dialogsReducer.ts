@@ -19,8 +19,7 @@ let initialState: DialogsStateType = {
     { id: v1(), message: "where are you from?" },
     { id: v1(), message: "i am from Belarus" },
     { id: v1(), message: "hi" },
-  ],
-  newMessageText: "Hello",
+  ]
 };
 export const dialogsReducer = (
   state: DialogsStateType = initialState,
@@ -28,16 +27,14 @@ export const dialogsReducer = (
 ): DialogsStateType => {
   switch (action.type) {
     case ADD_MESSAGE:
-      let body: MessagesType = { id: v1(), message: state.newMessageText };
-      return { ...state, messages: [...state.messages, body], newMessageText: '' };
-    case UPDATE_NEW_MESSAGE_TEXT:
-      return { ...state, newMessageText: action.newMessage };
+      let body: MessagesType = { id: v1(), message: action.value };
+      return { ...state, messages: [...state.messages, body] };
     default:
       return state;
   }
 };
 
-export const addMessageAC = () => ({ type: ADD_MESSAGE } as const);
+export const addMessageAC = (value: string) => ({ type: ADD_MESSAGE, value } as const);
 export const updateNewMessageTextAC = (newMessage: string) =>
   ({ type: UPDATE_NEW_MESSAGE_TEXT, newMessage } as const);
 
@@ -53,5 +50,4 @@ export type MessagesType = {
 export type DialogsStateType = {
   dialogsItem: DialogsItemType[];
   messages: MessagesType[];
-  newMessageText: string;
 };

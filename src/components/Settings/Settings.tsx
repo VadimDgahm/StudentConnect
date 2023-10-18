@@ -1,5 +1,6 @@
 import React from 'react';
 import './Settings.module.css';
+import {witchRedirectComponent} from '../../hoc/wichRedirectComponent';
 type SettingsPropsType = {
 
 }
@@ -11,4 +12,4 @@ const Settings = () => {
     );
 }
 
-export default Settings;
+export default  witchRedirectComponent(Settings);

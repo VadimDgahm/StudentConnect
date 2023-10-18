@@ -11,23 +11,18 @@ import { Dispatch } from "redux";
 
 type MapStateToPropsType = {
   posts: PostsType[],
-  newPostText: string,
 }
 type MapDispatchToPropsType = {
-  addNewPost: () => void
-  onChangeHandler: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  addNewPost: (value: string) => void
 }
 const mapStateToProps = (state: RootState): MapStateToPropsType => {
   return {
-    posts: state.profile.posts,
-    newPostText: state.profile.newPostText,
+    posts: state.profile.posts
   };
 };
 const mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
   return {
-    addNewPost: () => dispatch(addPostAC()),
-    onChangeHandler: (e: ChangeEvent<HTMLTextAreaElement>) =>
-      dispatch(updateNewPostTextAC(e.currentTarget.value)),
+    addNewPost: (value: string) => dispatch(addPostAC(value)),
   };
 };
 

@@ -9,8 +9,6 @@ valueInput: string
  onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void
 }
 const NewsText: React.FC<NewsPropsType> = ({valueInput,onChangeHandler}) => {
-    console.log("NewsText");
-
     return (
             <input value={valueInput} onChange={onChangeHandler} />
     );

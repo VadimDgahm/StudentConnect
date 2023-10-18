@@ -8,9 +8,6 @@ valueInput: string
 }
 
 const ValueInput: React.FC<NewsPropsType> = ({valueInput,onChangeHandler}) => {
-    console.log("ValueInput");
-    
-
     return (
             <input value={valueInput} onChange={onChangeHandler} />
     );

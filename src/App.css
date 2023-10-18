@@ -1,14 +1,27 @@
 .App {
-    width: 1200px;
-    margin: 0 auto;
     display: grid;
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-template-areas: 'header header' 'nav content';
     grid-gap: 10px;
 }
+.containerAPP{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
 
 .app_wrapper{
     background-color: blueviolet;
     grid-area: content;
 }
+
+.logoApp{
+    height: 100%;
+    margin-top: 25%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
