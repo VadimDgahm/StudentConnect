@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect} from 'react';
 import styles from './profile.module.css'
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import {
@@ -6,7 +6,6 @@ import {
     ProfileResponseType,
     ProfileStateType,
     setUserProfileAC,
-    setUserProfileType
 } from '../../redux/reducers/profileReducer';
 import { RootState} from '../../redux/redux-store';
 import {MyPostsContainer} from './MyPost/MyPostContainer';
