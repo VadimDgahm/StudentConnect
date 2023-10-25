@@ -2,7 +2,7 @@ import './App.css';
 import {Header} from './components/Header/Header';
 import {Navigate} from './components/Navigate/Navigate';
 import Profile from './components/Profile/Profile';
-import { Route} from 'react-router-dom';
+import {Redirect, Route} from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -29,6 +29,7 @@ const {isInitialized} = useApp()
                         <Header/>
                         <Navigate/>
                         <div className="app_wrapper">
+                            <Route path={'/'} render={() => <Redirect to={'/profile'}/>}/>
                             <Route path={'/profile/:userId?'} render={() => <Profile/>}/>
                             <Route path="/dialogs" render={() => <DialogsContainer/>}/>
                             <Route path="/news" render={() => <News/>}/>

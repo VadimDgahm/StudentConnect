@@ -4,6 +4,9 @@ import {loginTC} from '../../redux/reducers/authReducer';
 import {useApp, useAppDispatch, useAppSelector} from '../../hooks/hooks';
 import {selectors} from '../../utils/Selectors';
 import {Redirect} from 'react-router-dom';
+type LoginPropsType = {
+
+}
 
 type FormikErrorType = {
     email?: string,

@@ -62,6 +62,8 @@ export const authReducer = (state: StateAuthReducerType = initialState, action: 
 };
 export const setAuthAC = (email: string | null, id: number| null, login: string | null) => ({ type: SET_AUTH, payload: {email, id, login}}as const)
 export const changeAuthStatusPreloaderAC = (isInitialized: boolean) => ({type: "AUTH/CHANGE_STATUS_LOADER" as const, isInitialized})
+export const getMeUserAC = (data:ProfileResponseType) => ({type: 'SET_ME_USER' as const, data})
+export const getCaptchaAC = (url: string | null) => ({type:'GET_CAPTCHA' as const, url})
 
 export const setAuthTC = () => (dispatch: AppDispatch) => {
     appApi.me()
@@ -79,12 +81,11 @@ export const setAuthTC = () => (dispatch: AppDispatch) => {
     })
 }
 export type getMeUserACType = ReturnType<typeof getMeUserAC>
-const getMeUserAC = (data:ProfileResponseType) => ({type: 'SET_ME_USER' as const, data})
+
 export const getMeUserTC = (id: number) => async (dispatch: AppDispatch) => {
    let res = await profileApi.getUser(id)
     dispatch(getMeUserAC(res.data))
 }
-export const getCaptchaAC = (url: string | null) => ({type:'GET_CAPTCHA' as const, url})
 export const logoutTC = () => async (dispatch: AppDispatch) => {
     let res = await appApi.logout()
     dispatch(setAuthAC(null,null,null))
